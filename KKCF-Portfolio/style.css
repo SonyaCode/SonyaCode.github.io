@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+:root {
+    --black: #000000;
+    --white: #FFFFFF;
+    --dark-bluish-purple: #3B3355;
+    --medium-bluish-purple: #5D5D81;
+    --light-blue: #BFCDE0;
+    --light-gray: #FEFCFD;
+    --horizontal-line-length: 75px;
+}
+
+.navbar-color {
+    background-color: var(--light-gray);
+}
+
+.about-me {
+    background-color: var(--medium-bluish-purple);
+    color: var(--white);
+}
+
+.set-height {
+    height: 600px;
+}
+
+.customize-btn {
+    background-color: var(--dark-bluish-purple);
+    color: var(--white);
+}
+
+.customize-btn:hover {
+    background-color: #4e4471;
+}
+
+button a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.graduation-photo {
+    width: 300px;
+    border-radius: 10px;
+    border: 5px solid var(--light-gray)
+
+}
+
+.timeline-section {
+    background-color: var(--light-blue);
+    color: var(--black);
+}
+
+/* Inspired by https://codepen.io/htmlcodex/pen/LYGjPgV?editors=1100 */
+/* Container of the timeline */
+.timeline {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Vertical line of the timeline */
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    background-color: var(--dark-bluish-purple);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+.event {
+    padding: 15px 30px;
+    position: relative;
+    /* background-color: var(--light-gray); */
+    width: 50%;
+}
+
+/* Horizontal line for each event */
+.event::before {
+    content: '';
+    position: absolute;
+    width: var(--horizontal-line-length);
+    height: 2px;
+    top: calc(50% - 1px);
+    right: 0px;
+    background: var(--dark-bluish-purple);
+    z-index: 1;
+}
+
+/* Circle next to the horizontal line */
+.event::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    left: calc(100% - 8px - var(--horizontal-line-length)); /* 75px to the right from the center */
+    background-color: var(--dark-bluish-purple);
+    border: 2px solid var(--dark-bluish-purple);
+    border-radius: 50%;
+    text-align: center;
+    z-index: 1;
+
+}
+
+
+.left {
+    left: 0;
+}
+
+.right {
+    left: 50%;
+}
+
+.right::before {
+    left: 0;
+}
+
+.right::after {
+    left: var(--horizontal-line-length); /* 75px to the right from the center */
+}
+
+/* Prevent the content on the left to touch the horizontal line */
+.timeline-content-left {
+    width: calc(100% - var(--horizontal-line-length))
+}
+
+/* Prevent the content on the right to touch the horizontal line */
+.timeline-content-right {
+    margin-left: var(--horizontal-line-length);
+}
+
+footer {
+    background-color: var(--dark-bluish-purple);
+}
+
+footer img {
+    width: 32px;
+}
